@@ -27,7 +27,7 @@ class Maximum{
 int main(){
     int n=6;
     int k=3;
-    int arr[n]={1,5,6,7,2,1};
+    int arr[n]={1,5,6,7,5,1};
     Maximum obj;
     cout<<obj.Max(arr,n,k);
     return 0;
