@@ -30,8 +30,8 @@ class Longest{
 
 int main(){
     int n=7;
-    vector<int> arr={4,1,1,1,1,1,5};
-    int k=5;
+    vector<int> arr={4,-1,1,3,-1,0,1};
+    int k=3;
     Longest ob;
     int v1=ob.Longest_Subarray(arr,k);
     cout<<v1;
