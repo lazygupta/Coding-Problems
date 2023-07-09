@@ -27,9 +27,14 @@ class Longest{
                 j++;
             }
 
-            else if(sum>k){
-                sum-=v[i];
-                i++;
+            else if (sum>k){
+                while(sum>k){
+                    sum = sum - v[i];
+                    i++;
+                    if(sum==k){
+                        mx = max(mx,(j-i+1));
+                    }
+                }
                 j++;
             }
         }
@@ -39,10 +44,10 @@ class Longest{
 
 
 int main(){
-    int n=17;
+    int n=5;
     //17 15
-    vector<int> arr={-13,0,6, 15, 16, 2, 15, -12, 17, -16, 0 ,-3, 19, -3, 2, -9,-6};
-    int k=15;
+    vector<int> arr={1,1,0,1,1};
+    int k=2;
     Longest ob;
     int v1=ob.Longest_Subarray(arr,k);
     cout<<v1;
@@ -50,4 +55,31 @@ int main(){
 }
 
 
-// Lets optimise it
+// 2nd Apporach 
+
+// Using Hashing
+
+//Hpwever this code with not work for array containing zeroes or negative number
+
+int longestSubarrayWithSumK(vector<int> v, long long k) {
+    long long sum=0;
+    long long maxLen=0,len=0;
+    map <long long,int> PreSumMap;
+    for(long long i=0;i<v.size();i++){
+        sum+=v[i];
+
+        if(sum==k) maxLen=max(maxLen, i + 1);
+
+        long long rem = sum-k;
+
+        if(PreSumMap.find(rem) != PreSumMap.end()){
+            len = i - PreSumMap[rem];
+            maxLen = ( maxLen , len);
+        }
+
+        PreSumMap[sum] = i;
+    }
+    return maxLen;
+}
+
+
