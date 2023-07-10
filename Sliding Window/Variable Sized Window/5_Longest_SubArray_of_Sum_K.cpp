@@ -6,7 +6,7 @@
 
 // I have solved this using Sliding Window Algorithm taking O(N) time complexity
 
-// But the main problem is that my solution only works for the array containing only POSITIVE INTEGERS
+// But the main problem is that my solution only works for the array containing only positive negative and zeroes
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -44,10 +44,10 @@ class Longest{
 
 
 int main(){
-    int n=5;
+    int n=7;
     //17 15
-    vector<int> arr={1,1,0,1,1};
-    int k=2;
+    vector<int> arr={1,2,-1,1,0,1,1};
+    int k=3;
     Longest ob;
     int v1=ob.Longest_Subarray(arr,k);
     cout<<v1;
@@ -59,27 +59,45 @@ int main(){
 
 // Using Hashing
 
-//Hpwever this code with not work for array containing zeroes or negative number
+// However this code with not work for array containing zeroes or negative number
+// Because mapping of sums is being replaced by index having zeroes 
 
-int longestSubarrayWithSumK(vector<int> v, long long k) {
+// O(N^2)(Worst Case) - better Approach
+
+#include<bits/stdc++.h>
+
+int longestSubarrayWithSumK(vector<int> a, long long k) {
+    map <long long , long long> mpp;
+    int len=0; int maxlength=0;
     long long sum=0;
-    long long maxLen=0,len=0;
-    map <long long,int> PreSumMap;
-    for(long long i=0;i<v.size();i++){
-        sum+=v[i];
+    for(int i=0;i<a.size();i++){
+        sum+= a[i];
 
-        if(sum==k) maxLen=max(maxLen, i + 1);
+        if(sum==k) maxlength=max(maxlength,i+1);
 
-        long long rem = sum-k;
-
-        if(PreSumMap.find(rem) != PreSumMap.end()){
-            len = i - PreSumMap[rem];
-            maxLen = ( maxLen , len);
+        long long rem = sum -k ;
+        
+        if(mpp.find(rem) != mpp.end()){
+            len = i - mpp[rem];
+            maxlength = max (maxlength , len);
         }
 
-        PreSumMap[sum] = i;
+        if(mpp.find(sum) == mpp.end()){ // Both for negative and zeroes
+           mpp[sum] = i;
+        }
     }
-    return maxLen;
+    return maxlength;
 }
+
+// To make it work for zereos and negative number both  the small change should be done
+// We should map the sum value only if that sum was not in the map before
+
+// So in above code
+
+// At line 84
+
+// if(mpp.find(sum) == mpp.end()){
+//    mpp[sum] = i;
+// }
 
 
