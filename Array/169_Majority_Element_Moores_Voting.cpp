@@ -70,3 +70,7 @@ int main(){
     cout<<Majority(v);
     return 0;
 }
+
+
+// If the questions states that there must be a majority element in array
+// the we can directly return the element

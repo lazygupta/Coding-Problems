@@ -46,7 +46,7 @@ class Longest{
 int main(){
     int n=7;
     //17 15
-    vector<int> arr={1,2,-1,1,0,1,1};
+    vector<int> arr={ -2, 1, -3, 4, -1, 2, 1, -5, 4};
     int k=3;
     Longest ob;
     int v1=ob.Longest_Subarray(arr,k);
