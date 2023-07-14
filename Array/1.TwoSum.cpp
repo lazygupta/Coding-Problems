@@ -10,7 +10,7 @@
 
 // Brute Force Solution O(N^2)
 
-// Approach - Hashing
+// Better Approach - Hashing
 
 // TC - O(N x logN) - For Map
 // SC - O(N)
@@ -45,8 +45,35 @@ using namespace std;
 //     return 0;
 // }
 
+// Variety -2 
+// Returning indices of the pairs
 
-// Approach 2- Two Pointer
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int> &v, int target) {
+    map<int,int> mpp;
+    int j=0;
+    int sum=0;
+    while(j<v.size()){
+
+        int rem= target - v[j];
+
+        if(mpp.find(rem) != mpp.end()){
+            return {mpp[rem], j};
+        }
+
+        mpp[v[j]] = j;
+
+        j++;
+    }
+
+    return {-1,-1};
+    }
+};
+
+
+// Approach 2- Two Pointer(Without using two pointer approach)
 
 // TC  - O(N)(Traversing the array) + O(logN)(For Sorting)
 // Sc - O(1)
