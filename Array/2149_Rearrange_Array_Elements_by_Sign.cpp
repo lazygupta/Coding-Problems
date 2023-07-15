@@ -55,4 +55,4 @@ public:
 // In that case the optimal solution is not there.
 // Somehow we have to jump over the brute force solution
 
-// This questiomn is a falloff question where you have to jump over the Brute force solution from the optimal one.
+// This question is a falloff question where you have to jump over the Brute force solution from the optimal one.
