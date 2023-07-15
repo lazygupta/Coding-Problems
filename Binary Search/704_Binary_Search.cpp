@@ -4,7 +4,7 @@
 
 // T.C - O(log N)
 
-// eg, arr size = 32
+// eg ., arr size = 32
 // 32 -> 16-> 8 -> 4-> 2-> 1 = All together 6 steps . So log(base 2)32 gives near about 6
 
 // For overflow condition
