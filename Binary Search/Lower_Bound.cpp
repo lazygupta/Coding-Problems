@@ -29,7 +29,7 @@ int lowerBound(vector<int> arr, int n, int x) {
 }
 
 
-// Or yopu can also do this problem by using lower boyund stl function
+// Or you can also do this problem by using lower boyund stl function
 
 // lb = lower_bound(arr.begin(),arr.end(),x) - arr.begin()
 

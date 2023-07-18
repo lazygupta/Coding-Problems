@@ -24,7 +24,6 @@ public:
 
 // We can solve this using Binary Search
 
-//
 
 class Solution {
 public:
@@ -78,12 +77,12 @@ public:
         return {first,last};
     }
 
-    // To find the occurence of element in an arrya
+    // To find the occurence of element in an array
     // Just minus the first and last occurence and add plus 1 in it
         
 };
 
-// Another Approach without Binaryu Search but T.C = O(N) + O(N) = O(2N)
+// Another Approach without Binary Search but T.C = O(N) + O(N) = O(2N)
 // S.c =m O(1)
 
 class Solution {
