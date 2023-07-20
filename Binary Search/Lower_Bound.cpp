@@ -8,8 +8,6 @@ using namespace std;
 
 int lowerBound(vector<int> arr, int n, int x) {
 
-
-
 	int low=0 , high = n-1 , mid = 0;
 	int answer = n;
 
