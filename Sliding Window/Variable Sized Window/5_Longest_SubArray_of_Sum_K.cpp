@@ -44,9 +44,9 @@ class Longest{
 
 
 int main(){
-    int n=7;
+    int n=-5;
     //17 15
-    vector<int> arr={ -2, 1, -3, 4, -1, 2, 1, -5, 4};
+    vector<int> arr={-5, 8, -14, 2, 4, 12};
     int k=3;
     Longest ob;
     int v1=ob.Longest_Subarray(arr,k);
@@ -64,30 +64,30 @@ int main(){
 
 // O(N^2)(Worst Case) - better Approach
 
-#include<bits/stdc++.h>
+// #include<bits/stdc++.h>
 
-int longestSubarrayWithSumK(vector<int> a, long long k) {
-    map <long long , long long> mpp;
-    int len=0; int maxlength=0;
-    long long sum=0;
-    for(int i=0;i<a.size();i++){
-        sum+= a[i];
+// int longestSubarrayWithSumK(vector<int> a, long long k) {
+//     map <long long , long long> mpp;
+//     int len=0; int maxlength=0;
+//     long long sum=0;
+//     for(int i=0;i<a.size();i++){
+//         sum+= a[i];
 
-        if(sum==k) maxlength=max(maxlength,i+1);
+//         if(sum==k) maxlength=max(maxlength,i+1);
 
-        long long rem = sum -k ;
+//         long long rem = sum -k ;
         
-        if(mpp.find(rem) != mpp.end()){
-            len = i - mpp[rem];
-            maxlength = max (maxlength , len);
-        }
+//         if(mpp.find(rem) != mpp.end()){
+//             len = i - mpp[rem];
+//             maxlength = max (maxlength , len);
+//         }
 
-        if(mpp.find(sum) == mpp.end()){ // Both for negative and zeroes
-           mpp[sum] = i;
-        }
-    }
-    return maxlength;
-}
+//         if(mpp.find(sum) == mpp.end()){ // Both for negative and zeroes
+//            mpp[sum] = i;
+//         }
+//     }
+//     return maxlength;
+// }
 
 // To make it work for zereos and negative number both  the small change should be done
 // We should map the sum value only if that sum was not in the map before

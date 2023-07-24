@@ -20,7 +20,7 @@ void subarray(int ar[],int n,int k)
 			l.push_back(ar[j]); //Storing in the list 
 		}
 		if(j-i+1<k) j++; //Checking for the windows size reached or not
-		else if(j-i+1==k){ //Windows su=ize reached
+		else if(j-i+1==k){ //Windows size reached
  			if(l.size()==0){
 				v.push_back(0); //Storing 0 in a vector if list is empty in a window
 			}
