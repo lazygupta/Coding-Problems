@@ -1,7 +1,7 @@
 // We have to find single element in an Array
 // In O(logN) time
 
-
+// Understand carefully
 
 
 #include<bits/stdc++.h>
