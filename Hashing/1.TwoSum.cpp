@@ -75,7 +75,7 @@ public:
 
 // Approach 2- Two Pointer(Without using two pointer approach)
 
-// TC  - O(N)(Traversing the array) + O(logN)(For Sorting)
+// TC  - O(N)(Traversing the array) + O(NlogN)(For Sorting)
 // Sc - O(1)
 
 

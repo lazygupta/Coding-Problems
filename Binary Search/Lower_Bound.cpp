@@ -29,10 +29,11 @@ int lowerBound(vector<int> arr, int n, int x) {
 
 // Or you can also do this problem by using lower boyund stl function
 
-// lb = lower_bound(arr.begin(),arr.end(),x) - arr.begin()
+// lb = lower_bound(arr.begin(),arr.end(),x) - arr.begin() // arr.begin is minus because lower bound returns an itearator
 
 
 // Upper bound
+// Upper bound is the smallest index in an array whose element is greater than target value.
 
 int upperBound(vector<int> &arr, int x, int n){
 	// Write your code here.
