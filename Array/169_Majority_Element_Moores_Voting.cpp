@@ -66,7 +66,7 @@ int Majority(vector<int> v){
 }
 
 int main(){
-    vector<int> v{7,7,5,6,5,1,5,7,5,5,7,7,5,5,5,5};
+    vector<int> v{1,1,1,1,1,1,2,3,1,5,1,7,8,9,10,1,12,1,12,1};
     cout<<Majority(v);
     return 0;
 }
