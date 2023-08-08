@@ -64,30 +64,31 @@ int main(){
 
 // O(N^2)(Worst Case) - better Approach
 
-// #include<bits/stdc++.h>
+#include<bits/stdc++.h>
+using namespace std;
 
-// int longestSubarrayWithSumK(vector<int> a, long long k) {
-//     map <long long , long long> mpp;
-//     int len=0; int maxlength=0;
-//     long long sum=0;
-//     for(int i=0;i<a.size();i++){
-//         sum+= a[i];
+int longestSubarrayWithSumK(vector<int> a, long long k) {
+    map <long long , long long> mpp;
+    int len=0; int maxlength=0;
+    long long sum=0;
+    for(int i=0;i<a.size();i++){
+        sum+= a[i];
 
-//         if(sum==k) maxlength=max(maxlength,i+1);
+        if(sum==k) maxlength=max(maxlength,i+1);
 
-//         long long rem = sum -k ;
+        long long rem = sum -k ;
         
-//         if(mpp.find(rem) != mpp.end()){
-//             len = i - mpp[rem];
-//             maxlength = max (maxlength , len);
-//         }
+        if(mpp.find(rem) != mpp.end()){
+            len = i - mpp[rem];
+            maxlength = max (maxlength , len);
+        }
 
-//         if(mpp.find(sum) == mpp.end()){ // Both for negative and zeroes
-//            mpp[sum] = i;
-//         }
-//     }
-//     return maxlength;
-// }
+        if(mpp.find(sum) == mpp.end()){ // Both for negative and zeroes
+           mpp[sum] = i;
+        }
+    }
+    return maxlength;
+}
 
 // To make it work for zereos and negative number both  the small change should be done
 // We should map the sum value only if that sum was not in the map before

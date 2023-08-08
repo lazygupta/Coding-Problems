@@ -13,22 +13,22 @@
 #include <bits/stdc++.h> 
 using namespace std;
 
-// long long maxSubarraySum(int v[], int n)
-// {
-//         int i=0;
-//         // if(v.size()==1) return v[0];
-//         long long sum=0;long long mx=INT_MIN;
-//         while(i<n){
-//             sum+=v[i];
+long long maxSubarraySum(int v[], int n)
+{
+        int i=0;
+        // if(v.size()==1) return v[0];
+        long long sum=0;long long mx=INT_MIN;
+        while(i<n){
+            sum+=v[i];
 
-//             mx=max(mx,sum); // Storing the maximum sum and keeping the record
+            mx=max(mx,sum); // Storing the maximum sum and keeping the record
 
-//             if(sum<0) sum=0; // If at any position the sum becomes negative reset the sum to zero
+            if(sum<0) sum=0; // If at any position the sum becomes negative reset the sum to zero
 
-//             i++; // Increasing the pointer
-//         }
-//         return (mx<0)?0:mx;
-// }
+            i++; // Increasing the pointer
+        }
+        return (mx<0)?0:mx;
+}
 
 // In the above question it may be asked 
 // Print any subarray with maximum sum k
