@@ -3,27 +3,49 @@ using namespace std;
 
 class Solution {
 public:
-    int findKthPositive(vector<int>& arr, int k) {
-        int n= arr.size();
-        int count=0,m=0;
+    int longestSubsequence(vector<int>& arr, int difference) {
+        int count_diff=0;
         vector<int> v;
-        for(int i=0;i<n;i++){
-            if(find(arr.begin(),arr.end(),i+1) == arr.end()){
-                v.push_back(i);
+        for(int i=0;i<arr.size();i++){
+            for(int j=i;j<arr.size();j++){
+                if(arr[j]-arr[i] == difference){
+                    v.push_back(arr[i]);
+                    v.push_back(arr[j]);
+                }
             }
         }
-        cout<<endl;
-        return 0;
+        vector<int> v1;
+        for(auto x:v){
+            if(find(v1.begin(),v1.end(),x) == v1.end()){
+                v1.push_back(x);
+            }
+        }
+
+        sort(v1.begin(),v1.end(),greater<int>());
+
+        // for(auto x:v1){
+        //     cout<<x<<" ";
+        // }
+
+        int count =0;
+        for(int i=0;i<v1.size()-1;i++){
+            if(!((v1[i+1] - v1[i]) == difference)){
+                v1.erase(v1.begin()+(i+1));
+            }
+        }
+
+        return v1.size();
+
+        // 7 5 3 1 4 2
+        // 7 5 4 3 2 1
+        // 7 5 3 
     }
 };
 
-int main()
-{
-    vector<int> arr{2,3,4,7,11 };
-    int n = arr.size();
-    // cout<<n<<endl;
+int main(){
+    vector<int> v{1,2,3,4};
     Solution obj;
-    cout<<obj.findKthPositive(arr,5);
-    // cout << "The maximum subarray sum is: " << maxSum << endl;
+    cout<<obj.longestSubsequence(v,1);
+    
     return 0;
 }

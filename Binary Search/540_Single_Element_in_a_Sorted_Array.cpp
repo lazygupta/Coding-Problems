@@ -3,14 +3,12 @@
 
 // Understand carefully
 
-
 #include<bits/stdc++.h>
 using namespace std;
 
 class Solution {
 public:
     int singleNonDuplicate(vector<int>& nums) {
-        
         int n=nums.size();
         if(n==1) return nums[0];
         if(nums[0] != nums[1]) return nums[0];
@@ -18,7 +16,6 @@ public:
         int low =1, high = n-2;
         int res=1;
         while(low<=high){
-
             int mid = (low + high)/2;
             if(nums[mid] != nums[mid+1] && nums[mid]!=nums[mid-1]){// We are checking the middle element after every check
                 return nums[mid];
