@@ -1,6 +1,7 @@
 // Stroing the past value in the hash table
 
-
+// T.C = O(NlogN) + O(N)
+// S.C = O(N)
 
 #include<bits/stdc++.h>
 using namespace std;
