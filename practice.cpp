@@ -1,15 +1,50 @@
-#include <bits/stdc++.h>
-using namespace std;
+#define ll long long
 
-void isSubset(int a1[], int a2[], int n, int m)
+class Solution
 {
-    int a = 0, count = 0, j = 0;
-}
-int main()
-{
-    int n = 6, m = 4;
-    int a1[6] = {11, 1, 13, 21, 3, 7};
-    int a2[4] = {1, 3, 7, 11};
-    isSubset(a1, a2, n, m);
-    return 0;
-}
+public:
+    int maximum(vector<int> &v)
+    {
+        int maximum = 0;
+        for (int i = 0; i < v.size(); i++)
+        {
+            maximum = max(v[i], maximum);
+        }
+        return maximum;
+    }
+
+    ll result(vector<int> &v, int hour_speed)
+    {
+        ll totalhrstaken = 0;
+        for (int i = 0; i < v.size(); i++)
+        {
+            totalhrstaken += ceil(double(v[i]) / double(hour_speed));
+        }
+        return totalhrstaken;
+    }
+
+    int minEatingSpeed(vector<int> &piles, int h)
+    {
+        int low = 1, high = maximum(piles);
+        while (low <= high)
+        {
+            int mid = low + (high - low) / 2;
+
+            if (result(piles, mid) == h)
+            {
+                return mid;
+            }
+
+            if (result(piles, mid) > h)
+            {
+                low = mid + 1;
+            }
+
+            if (result(piles, mid) < h)
+            {
+                high = mid - 1;
+            }
+        }
+        return 99765;
+    }
+};
