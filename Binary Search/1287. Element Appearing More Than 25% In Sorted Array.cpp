@@ -8,64 +8,64 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-class Solution {
-    public: int findSpecialInteger(vector<int> arr) {
-        int n = arr.size();
-        for(int i = 0; i < n; i++) {
-            int count = 0;
-            for(int j = 0; j < n; j++) {
-                if(arr[i] == arr[j]) count++;
-            }
-            if(count > n / 4) return arr[i];
-        }
-        return -1;
-    }
-}
+// class Solution {
+//     public: int findSpecialInteger(vector<int> arr) {
+//         int n = arr.size();
+//         for(int i = 0; i < n; i++) {
+//             int count = 0;
+//             for(int j = 0; j < n; j++) {
+//                 if(arr[i] == arr[j]) count++;
+//             }
+//             if(count > n / 4) return arr[i];
+//         }
+//         return -1;
+//     }
+// }
 
 // Best Approach
 // Using frequency or hashmap to store the frequnecy of the array elements
 
 // T = O(N) , S = O(N)
 
-#include<bits/stdc++.h>
-using namespace std;
+// #include<bits/stdc++.h>
+// using namespace std;
 
-class Solution {
-    public: 
-    int findSpecialInteger(vector<int> arr) {
-        int n = arr.size();
-        int freq[] ={0};
-        for(int i : arr) {
-            freq[i]++;
-        } 
-        for(int i = 0; i < freq.length; i++) {
-            if(freq[i] > n / 4) return i;
-        }
-        return -1;
-    }
-}
+// class Solution {
+//     public: 
+//     int findSpecialInteger(vector<int> arr) {
+//         int n = arr.size();
+//         int freq[] ={0};
+//         for(int i : arr) {
+//             freq[i]++;
+//         } 
+//         for(int i = 0; i < freq.length; i++) {
+//             if(freq[i] > n / 4) return i;
+//         }
+//         return -1;
+//     }
+// };
 
 
 // Another Aproach
 
 // T= O(N) & S=O(1)
 
-#include<bits/stdc++.h>
-using namespace std;
+// #include<bits/stdc++.h>
+// using namespace std;
 
-class Solution {
-public:
-    int findSpecialInteger(vector<int>& v) {
-        int t=v.size()/4;
+// class Solution {
+// public:
+//     int findSpecialInteger(vector<int>& v) {
+//         int t=v.size()/4;
 
-        for(int i=0;i<(v.size())-t;i++){
-            if(v[i]==v[i+t]){
-                return v[i];
-            }
-        }
-        return -1;
-    }
-};
+//         for(int i=0;i<(v.size())-t;i++){
+//             if(v[i]==v[i+t]){
+//                 return v[i];
+//             }
+//         }
+//         return -1;
+//     }
+// };
 
 // Optimal Approach
 
@@ -84,8 +84,8 @@ public:
 // S = O(1)
 
 
-#include<bits/stdc++.h>
-using namespace std;
+// #include<bits/stdc++.h>
+// using namespace std;
 
 class Solution {
 public:
