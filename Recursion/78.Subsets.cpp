@@ -1,10 +1,7 @@
 // Geberate all the subsets of a string
 
 // This problem can be solves by using power set algorithm
-// 1st method
-
-
-
+// 1st method - Power set
 
 
 
