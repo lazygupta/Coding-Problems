@@ -1,4 +1,31 @@
 
+
+// 1st method
+
+
+class Solution
+{
+public:
+    vector<int> intersection(vector<int> &nums1, vector<int> &nums2)
+    {
+        vector<int> v;
+        int size = max(nums1.size(), nums2.size());
+        for (int i = 0; i < nums1.size(); i++)
+        {
+            if (find(nums2.begin(), nums2.end(), nums1[i]) != nums2.end())
+            {
+              if (find(v.begin(), v.end(), nums1[i]) == v.end())
+              v.push_back(nums1[i]);
+            }
+        }
+        return v;
+    }
+};
+
+
+
+// 2nd method
+
 #include<bits/stdc++.h>
 using namespace std;
 
