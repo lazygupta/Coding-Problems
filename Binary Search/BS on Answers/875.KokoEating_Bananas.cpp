@@ -39,9 +39,7 @@ public:
 //Think of Binary Search
 
 // We have a answer from 1 to maximum no. of elements in array
-
 // Therefore we can think of the binary search
-
 // T.C = O(max(elements) * logN)
 
 #define ll long long
