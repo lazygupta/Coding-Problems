@@ -1,37 +1,38 @@
-// Input: nums = [5,10,1,5,2], k = 1
-// Output: 13
-
 #include<bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    int sumIndicesWithKSetBits(vector<int>& nums, int k) {
-        int count=0,sum=0;
-        int arr[nums.size()];
-        int j=0;
-        for(int i=0;i<nums.size();i++){
-            if(__builtin_popcount(i)==k){
-                arr[j]=i;
-                j++;
-            }   
-        }
-        for(int i=0;i<j;i++){
-            cout<<arr[i]<<" ";
-        }
-        cout<<endl;
-        for(int i=0;i<j;i++){
-            sum+=nums[arr[i]];
+    double findMedianSortedArrays(vector<int> &a, vector<int> &b)
+    {
+        int n1 = a.size(), n2 = b.size();
+
+        vector<int> arr3;
+        // apply the merge step:
+        int i = 0, j = 0;
+        while (i < n1 && j < n2)
+        {
+            if (a[i] < b[j])
+                arr3.push_back(a[i++]);
+            else
+                arr3.push_back(b[j++]);
         }
 
-        return sum;
+        // copy the left-out elements:
+        while (i < n1)
+            arr3.push_back(a[i++]);
+        while (j < n2)
+            arr3.push_back(b[j++]);
+
+        // Find the median:
+        int n = n1 + n2;
+        if (n % 2 == 1)
+        {
+            return (double)arr3[n / 2];
+        }
+
+        double median = ((double)arr3[n / 2] + (double)arr3[(n / 2) - 1]) / 2.0;
+        return median;
     }
 };
-
-int main(){
-    vector<int> v{5,10,1,5,2};
-    int k=1;
-    Solution obj;
-    cout<<obj.sumIndicesWithKSetBits(v,k);
-    return 0;
-}

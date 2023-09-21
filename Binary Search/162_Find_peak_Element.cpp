@@ -1,4 +1,4 @@
-// Brute force solution comes up witht he logic to search for the element
+// Brute force solution comes up with the logic to search for the element
 // which is always greater than its neighbours
 // and then returning its index
 
@@ -65,10 +65,10 @@ public:
     }
 };
 
-// If the array condituion is nums[i]==nums[i+1] or nums[i]==nums[i-1]
+// If the array condition is nums[i]==nums[i+1] or nums[i]==nums[i-1]
 // then above code fails
 
-// In that conditiona n additionala line of code is necessary
+// In that condition additional line of code is necessary
 
 //Inside the while loop
 
