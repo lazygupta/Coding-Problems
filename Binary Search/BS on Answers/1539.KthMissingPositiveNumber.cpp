@@ -34,7 +34,7 @@ public:
 // We have to find the missing elements neighbours as soon as we found out the neighbours
 // Add the required missing number numbe in it
 
-//e.g 2 3 4 7 11
+// e.g 2 3 4 7 11
 // k= 5
 // The fifth missing number should be found between 7 and 11
 
@@ -46,7 +46,7 @@ public:
 // Now till 7 there are 3 missing numbers
 // How more we want??? -----> The answer is two more
 // Just add two to 7 -----> 7+2 = 9
-//bnow the question arises how to find the index of the neighbours
+// bnow the question arises how to find the index of the neighbours
 // We will use binary search for that
 
 class Solution {
@@ -55,14 +55,33 @@ public:
         int low = 0, high = arr.size()-1;
         int missing = 0;// for keeping the count of missing no.
         while(low<=high){
-            int mid = low + (high- low)/2;
+            int mid = low + (high- low)/2; //  0+4/2=2 // 3 //8/2=4
 
-            missing = arr[mid] - ( mid +1 );
+            missing = arr[mid] - ( mid +1 ); // 4-(3)=1 // 3 // 11-(5) = 6
 
-            if ( k<missing ) low = mid+1;
-            else high = mid-1;
+            if ( missing < k ) low = mid+1; // low = 3 // 4
+
+            else high = mid-1; // 3
         }
+        // Now we will see when the loop will exit
+        // Then the high will be always less than low
+        // in this case high = 3 and low = 4
+        // return arr[high] + (missing number needed more);
+        // So we will try to reduce because this will be giving runtime error for teste case
+        // {    4 ,  5, 6, 7} k=3
+        //  |   |
+        //  |   |
+        // high |
+        //     low
+        // the high would be pointing in a null index
+        // So reducing arr[high] + k - (missing number at high);
+        // We get, arr[high] + k - (arr[high] - (high +1)) // Formula for missing number - arr[high] - (high +1)
+        // arr[high] + k - arr[high] + high + 1;
+        // k + high + 1
+        // k +(low-1) +1;
+        // k + low;
 
-        
+        return low+k;
+
     }
 };
