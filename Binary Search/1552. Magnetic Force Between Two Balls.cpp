@@ -8,7 +8,7 @@
 // At 1 ----> 1-2-3 -----> Minimum dist = 1
 // At 2 ----> 1-3-7 -----> Minimum dist = 2
 // At 3 ----> 1-4-7 -----> Minimum dist = 3
-// From above the maximum of miniomum distance = 3
+// From above the maximum of minimum distance = 3
 // 3 is the answer
 
 // As we know our answer lies between 1 and maximum of element
