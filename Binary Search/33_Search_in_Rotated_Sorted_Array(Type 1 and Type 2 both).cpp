@@ -2,12 +2,10 @@
 
 // we have to search an element and return its index.
 // This can be done using Linear Search
-
 // Brute Force - O(N) - Using Linear Search
 
-
 // Optimal approach- O(log N) - using Binary Search\
-
+// T.C = O(1)
 
 
 #include<bits/stdc++.h>
