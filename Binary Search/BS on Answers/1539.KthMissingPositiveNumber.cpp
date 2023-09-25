@@ -32,7 +32,7 @@ public:
 
 // Traverse from 0 to array size
 // We have to find the missing elements neighbours as soon as we found out the neighbours
-// Add the required missing number numbe in it
+// Add the required missing number number in it
 
 // e.g 2 3 4 7 11
 // k= 5
@@ -67,6 +67,7 @@ public:
         // Then the high will be always less than low
         // in this case high = 3 and low = 4
         // return arr[high] + (missing number needed more);
+        // So reducing arr[high] + (k - (missing number at high));
         // So we will try to reduce because this will be giving runtime error for teste case
         // {    4 ,  5, 6, 7} k=3
         //  |   |
@@ -75,7 +76,7 @@ public:
         //     low
         // the high would be pointing in a null index
         // So reducing arr[high] + k - (missing number at high);
-        // We get, arr[high] + k - (arr[high] - (high +1)) // Formula for missing number - arr[high] - (high +1)
+        // We get, arr[high] + (k - (arr[high] - (high +1))) // Formula for missing number => arr[high] - (high +1)
         // arr[high] + k - arr[high] + high + 1;
         // k + high + 1
         // k +(low-1) +1;
