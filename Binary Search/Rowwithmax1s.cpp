@@ -39,7 +39,7 @@ int rowWithMax1s(vector<vector<int>> &matrix, int n, int m)
         int low=0,high=m-1;
         while(low<=high){
             int mid = low+ (high - low) /2;
-            if(matrix[i][mid] == 1){
+            if(matrix[i][mid] >= 1){
                 high=mid-1;
             }
             else{
