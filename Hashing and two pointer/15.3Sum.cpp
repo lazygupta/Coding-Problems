@@ -12,7 +12,7 @@
 // Check for the required number is there is the hashmap or not
 // If its there,sort the three number Store the three number in a data structure which doesnt accept duplicates(probably set)
 
-// T.C = O ( N x N ) x O(log M) + O(nlogn) (Loops , finding and sorting)....it may be decrease if we use somekind of unordered set
+// T.C = O ( N x N ) + O(nlogn) (Loops and sorting)....it may be decrease if we use somekind of unordered set
 // S.C = O(N)
 
 #include<bits/stdc++.h>

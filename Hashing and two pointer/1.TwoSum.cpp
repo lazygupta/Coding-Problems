@@ -18,32 +18,32 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// string result(vector<int> v,int target){
-//     map<int,int> mpp;
-//     int j=0;
-//     int sum=0;
-//     while(j<v.size()){
+string result(vector<int> v,int target){
+    map<int,int> mpp;
+    int j=0;
+    int sum=0;
+    while(j<v.size()){
 
-//         int rem= target - v[j];
+        int rem= target - v[j];
         
-//         if(mpp.find(rem) != mpp.end()){
-//             return "YES";
-//         }
+        if(mpp.find(rem) != mpp.end()){
+            return "YES";
+        }
 
-//         mpp[v[j]] = j;
+        mpp[v[j]] = j;
 
-//         j++;
-//     }
+        j++;
+    }
 
-//     return "NO";
-// }
+    return "NO";
+}
 
-// int main(){
-//     vector<int> v{2,6,5,8,11};
-//     int k=14;
-//     cout<<result(v,k);
-//     return 0;
-// }
+int main(){
+    vector<int> v{2,6,5,8,11};
+    int k=14;
+    cout<<result(v,k);
+    return 0;
+}
 
 // Variety -2 
 // Returning indices of the pairs
