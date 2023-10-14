@@ -1,19 +1,24 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void solve(int n){
-    if(n==1){
-        cout<<n<<" ";
-        return;
+int solve(string str){
+    int length= str.length();
+    int i=0;
+    int ans=INT_MAX,a=0;
+    while(i<length){
+        a++;
+        if(str[i] == '@' || str[i]=='$'){
+            ans = min ( ans ,a);
+            a=0;
+        }
+        i++;
     }
-    cout<<n<<" ";
-    solve(n-1);
-    
+    return min(ans,a);
 }
 
 
 int main(){
-    int n=8;
-    solve(n);
+    string str="PPPPPP@PPP@PP$PP";
+    cout<<solve(str);
     return 0;
 }
