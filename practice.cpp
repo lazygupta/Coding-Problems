@@ -1,24 +1,27 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int solve(string str){
-    int length= str.length();
-    int i=0;
-    int ans=INT_MAX,a=0;
-    while(i<length){
-        a++;
-        if(str[i] == '@' || str[i]=='$'){
-            ans = min ( ans ,a);
-            a=0;
+void isIsomorphic(string s, string t) {
+        map <char,char> mpp;
+        if(s.length()!=t.length()) return;
+        for(int i=0;i<s.length();i++){
+            if(mpp.find(s[i])!=mpp.end())
+            mpp[s[i]]=t[i];
         }
-        i++;
-    }
-    return min(ans,a);
+        for(auto it:mpp){
+            cout<<it.first<<" "<<it.second;
+        }
+        // int count =0;
+        // for(int i=0;i<s.length();i++){
+        //     if(t[i] == mpp[s[i]])
+        //     count++;
+        // }
+        // return count==s.length()?true:false;
 }
 
 
 int main(){
-    string str="PPPPPP@PPP@PP$PP";
-    cout<<solve(str);
+    string a="foo",b="bar";
+    isIsomorphic(a,b);
     return 0;
 }
