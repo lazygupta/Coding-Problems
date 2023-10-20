@@ -28,14 +28,12 @@ class Anagram{
         int i=0,j=0;
         int count=mpp.size();// Storing the no. of different alphabets in count as we will decrease it value whenever the map of alphabet become 0.
         int res=0;
-
         while(j<text.length()){
             if(mpp.find(text[j])!=mpp.end()){
                 mpp[text[j]]--;
                 if(mpp[text[j]]==0)
                 count--;
             }
-
             if(j-i+1<k){
                 j++;
             }
