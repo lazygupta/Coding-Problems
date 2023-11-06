@@ -1,6 +1,5 @@
 // Mast question hai
 
-
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -73,3 +72,35 @@ public:
 	    return res;
 	}
 };
+
+
+// Variety 2
+// Binary strings with no consecutive 1s
+
+// Make recursive tree and fod do code
+
+#include<bits/stdc++.h>
+
+void solve(vector<string> &res,int ones,int zeroes,int n,string output){
+    if(n==0){
+        res.push_back(output);
+        return;
+    }
+    string op1=output;
+    op1.push_back('0');
+    solve(res,ones,zeroes+1,n-1,op1);
+    if(output[output.length()-1] != '1'){
+        string op2=output;  
+        op2.push_back('1');
+        solve(res,ones+1,zeroes,n-1,op2);
+    }
+}
+
+vector<string> generateString(int N) {
+    // Write your code here.
+    vector<string> res;
+    string output="";
+    int ones=0,zeroes=0;
+    solve(res,ones,zeroes,N,output);
+    return res;
+}
