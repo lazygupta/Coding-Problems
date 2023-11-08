@@ -1,9 +1,35 @@
-// Geberate all the subsets of a string
+// Generate all the subsets of a string
 
 // This problem can be solves by using power set algorithm
 // 1st method - Power set
 
+//   0 1 2
+// 0 0 0 0 = ""
+// 1 0 0 1 = "c"
+// 2 0 1 0 = "b"
+// 3 0 1 1 = "bc"
+// 4 1 0 0 = "a"
+// 5 1 0 1 = "ac"
+// 6 1 1 0 = "ab"
+// 7 1 1 1 = "abc"
 
+class Solution {
+public:
+// Power Set
+    vector<vector<int>> subsets(vector<int>& nums) {
+        int n=nums.size();
+        int p=1<<n;//int p=pow(2,n)-1;
+        vector<vector<int>> result(p);
+        for(int i=0;i<p;i++){
+            for(int j=0;j<n;j++){
+                if((i >> j) & 1){
+                    result[i].push_back(nums[j]);
+                }
+            }
+        }
+        return result;
+    }
+};
 
 //2nd method
 
