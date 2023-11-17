@@ -1,6 +1,6 @@
 // Same as Q39 but the change was that we gave to consider only unique combination, we cant use same element multiple times
 
-// T.C = O(2^t) * k
+// T.C = O(2^t) * k logn
 // S.C = k * X (Extra set data structure)
 
 
