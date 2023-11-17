@@ -1,5 +1,5 @@
-// mAke recursion tree
-// based on pick and not pick
+// Make recursion tree
+// Based on pick and not pick
 
 // Same as Aditya vErma concept
 
