@@ -2,7 +2,7 @@
 
 // The input are having numbers which icntain dupliactes too
 
-// T.C = O(2^n) * k log n
+// T.C = O( 2^n *(k log (x) ))
 // S.C = O(2n)
 
 #include<bits/stdc++.h>
@@ -36,6 +36,9 @@ public:
 // Now try to avoid the use of sets
 
 // Make recursion tree call the function multiple times at every iteration we get the answer
+
+// T.C = O(2^n * k)
+// S.C = O(2^n * k)
 
 class Solution {
 public:
