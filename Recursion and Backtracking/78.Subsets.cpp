@@ -1,3 +1,7 @@
+// Dont confuse this question iwth SubsetII problem
+// The inputs contains no duplicates thats why answers are unique
+
+
 // Generate all the subsets of a string
 
 // This problem can be solves by using power set algorithm
