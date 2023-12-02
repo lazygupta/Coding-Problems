@@ -1,6 +1,6 @@
 // This question is different from his parent question 78. Subsets
 
-// The input are having numbers which icntain dupliactes too
+// The input are having numbers which contain dupliactes too
 
 // T.C = O( 2^n *(k log (x) ))
 // S.C = O(2n)
