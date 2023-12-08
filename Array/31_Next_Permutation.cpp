@@ -1,4 +1,4 @@
-
+//Revised on 8 Dec
 // brute Force Approach
 // Generate all the permutations
 // Return the permutation just after the given array
@@ -31,8 +31,8 @@ public:
 
 // As we know the next permutation will always be greter than the given array
 
-// Now choosing first 3 prefix .... We can change only in { 4 3 0 0}
-// Now choosing first 2 prefix .... We can change only in {1 5 4 3 0 0}
+// Now choosing first 3 prefix .... We can change only in {4 3 0 0}
+// Now choosing first 2 prefix .... We can change only in {5 4 3 0 0}
 //                               |
 //                               |
 //                               |
