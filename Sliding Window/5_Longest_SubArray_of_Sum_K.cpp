@@ -6,7 +6,7 @@
 
 // I have solved this using Sliding Window Algorithm taking O(N) time complexity
 
-// But the main problem is that my solution only works for the array containing only positive negative and zeroes
+// But the main problem is that my solution not works for the array containing only positive negative and zeroes
 
 #include<bits/stdc++.h>
 using namespace std;
