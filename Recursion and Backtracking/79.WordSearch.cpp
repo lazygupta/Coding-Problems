@@ -3,8 +3,7 @@ using namespace std;
 
 class Solution {
 public:
-
-    bool findNext(int row,int col,int index,vector<vector<char>> &board,string word){
+    bool findNext(int row,int col,int index,vector<vector<char>> &board,string word) {
         if(index==word.length()){
             return true;
         }
