@@ -29,3 +29,55 @@ public:
         return s.empty()?true:false;
     }
 };
+
+// Without any Space COmplexity
+// Using Tortise and Hare method
+
+// Time Complexity: O (2*N) 
+// Space Complexity: O(1)
+
+class Solution {
+public:
+    ListNode* Reverse(ListNode *head){
+        ListNode* prev=NULL;
+        ListNode* temp=head;
+        while(temp!=NULL){
+            ListNode *front = temp->next;
+            temp->next=prev;
+            prev=temp;
+            temp=front;
+        }
+        return prev;
+    }
+
+    bool isPalindrome(ListNode* head) {
+
+        if(head==nullptr && head->next==nullptr){
+            return true;
+        }
+        ListNode *fast=head;
+        ListNode *slow=head;
+        while(fast->next && fast->next->next){
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+
+        ListNode* reversed_List = Reverse(slow->next);
+        ListNode* first=head;
+        ListNode* second=reversed_List;
+
+        while(second!=nullptr){
+            if(first->val != second->val ){
+
+                Reverse(reversed_List);
+
+                return false;
+            }
+            first=first->next;
+            second=second->next;
+        }
+        Reverse(reversed_List);
+
+        return true;
+    }
+};
