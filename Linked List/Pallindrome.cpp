@@ -67,10 +67,8 @@ public:
         ListNode* second=reversed_List;
 
         while(second!=nullptr){
-            if(first->val != second->val ){
-
+            if(first->val != second->val ) {
                 Reverse(reversed_List);
-
                 return false;
             }
             first=first->next;
