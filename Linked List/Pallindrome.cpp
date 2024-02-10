@@ -30,7 +30,7 @@ public:
     }
 };
 
-// Without any Space COmplexity
+// Without any Space Complexity
 // Using Tortise and Hare method
 
 // Time Complexity: O (2*N) 
