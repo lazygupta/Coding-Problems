@@ -1,5 +1,5 @@
-
-
+// T.C = O(N/2 + N/2 + N)
+// S.C = O(N)
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -33,6 +33,30 @@ public:
             qu.pop();
             temp=temp->next;
         }
+        return head;
+    }
+};
+
+// Without space complexity
+// Time Complexity: O (2*N) 
+// Space Complexity: O(1)
+
+class Solution {
+public:
+    ListNode* oddEvenList(ListNode* head) {
+        if(head == NULL || head->next == nullptr){
+            return head;
+        }
+        ListNode *odd= head;
+        ListNode *even= head->next;
+        ListNode *evenhead=head->next;
+        while(odd->next!=NULL && even->next!=nullptr){
+            odd->next=odd->next->next;
+            even->next=even->next->next;
+            odd=odd->next;
+            even=even->next;
+        }
+        odd->next=evenhead;
         return head;
     }
 };
