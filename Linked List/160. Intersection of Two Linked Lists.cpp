@@ -1,4 +1,4 @@
-// T.C = O ( N) + O(N)
+// T.C = O (n+m)
 // S.C = O(N)
 
 #include<bits/stdc++.h>
