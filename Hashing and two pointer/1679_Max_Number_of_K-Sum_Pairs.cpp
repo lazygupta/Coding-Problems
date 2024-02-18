@@ -9,7 +9,7 @@
 
 // If at any time the sum<k you have to increase the left pointer
 
-// Or else just decrease the right pointer
+// Or else just decrease the right pointer 
 
 // T = O(NlogN) + O(N)
 // S= O(1)
