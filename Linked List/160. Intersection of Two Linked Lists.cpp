@@ -69,3 +69,29 @@ public:
             return CollisionPoint(headB,headA,d);
     }
 };
+
+// T.C = O max(N or M)
+// S.C = O(1)
+
+class Solution {
+public:
+
+    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+        ListNode *dummy1=headA;
+        ListNode *dummy2=headB;
+        while(dummy1!=dummy2){
+            if(dummy1==NULL){
+                dummy1=headB;
+            }
+            else{
+                dummy1=dummy1->next;
+            }
+            if(dummy2==NULL){
+                dummy2=headA;
+            }
+            else
+                dummy2=dummy2->next;
+        }
+        return dummy1;
+    }
+};
