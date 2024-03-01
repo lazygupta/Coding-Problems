@@ -40,7 +40,7 @@ public:
 // Optimal Solution
 
 // Making it a circular linked list
-// After getting the length oof the linked list
+// After getting the length of the linked list
 // We break the list fron (length-k)th node
 
 class Solution {
