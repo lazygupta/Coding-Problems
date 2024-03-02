@@ -1,7 +1,7 @@
 // Let n=7
 // (7) = (0111)
 // (6) = (0110)
-// 7 & 6 = 0111 & 0110 = 0110 > 0 i.e whenever the number and its predecessor number is biwise and and it gives
+// 7 & 6 = 0111 & 0110 = 0110 > 0 i.e whenever the number and its predecessor number is bitwise and and it gives
 // result>0 , the number is not power of 2
 
 // Let n=8
