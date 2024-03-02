@@ -1,8 +1,7 @@
 // Let n=7
 // (7) = (0111)
 // (6) = (0110)
-// 7 & 6 = 0111 & 0110 = 0110 > 0 i.e whenever the number and its predecessor number is bitwise and and it gives
-// result>0 , the number is not power of 2
+// 7 & 6 = 0111 & 0110 = 0110 > 0 i.e whenever the number and its predecessor number is (bitwise and) and it gives result>0 , the number is not power of 2
 
 // Let n=8
 // 8 = 1000
@@ -20,5 +19,15 @@ public:
         if(n<=0) return false;
         if(n & (n - 1)) return false;
         return true;
+    }
+};
+
+// 2 march
+
+class Solution {
+public:
+    bool isPowerOfTwo(int n) {
+        if(n<=0) return false;
+        return n&(n-1)?false:true;
     }
 };
