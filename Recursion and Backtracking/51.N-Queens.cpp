@@ -1,7 +1,7 @@
 // Same intuition as Word Search
 // We have to fill Q in every row and then check for valid fill that it can accomodate Q there or not
 
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
 class Solution
