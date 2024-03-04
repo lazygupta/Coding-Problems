@@ -8,7 +8,7 @@
 // 1st method - Power set
 
 //   0 1 2
-// 0 0 0 0 = ""
+// 0 0 0 0 = "" // 001 & 001
 // 1 0 0 1 = "c"
 // 2 0 1 0 = "b"
 // 3 0 1 1 = "bc"
@@ -22,7 +22,7 @@ public:
 // Power Set
     vector<vector<int>> subsets(vector<int>& nums) {
         int n=nums.size();
-        int p=1<<n;//int p=pow(2,n)-1;
+        int p=1<<n;//int p=pow(2,n);
         vector<vector<int>> result(p);
         for(int i=0;i<p;i++){
             for(int j=0;j<n;j++){
