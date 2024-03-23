@@ -1,4 +1,4 @@
-// The question com[rises of making choices, so the first algorithm that should be coming into our mind is Recrusion
+// The question comprises of making choices, so the first algorithm that should be coming into our mind is Recrusion
 // The question can be done using recursion tree
 // But the comoplexity would be higher
 
