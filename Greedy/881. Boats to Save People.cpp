@@ -2,7 +2,6 @@
 // Atmost two persons allowed
 // Total weight should be less than limit
 
-
 // Intuition :-
 // Send the heaviest person with the lightest person
 
