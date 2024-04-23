@@ -1,26 +1,27 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-vector<int> MinimumCoins(int n)
-{
-    // Write your code here
-    vector<int> v{1000,500,100,50,20,10,5,2,1};
-    vector<int> res;
-    int i=0;
-    while(n!=0){
-        if(n>=v[i]){
-            res.push_back(v[i]);
-            n-=v[i];
+int solve(int n,string str){
+    int valley=0;
+    int count=0;
+    for(auto it:str){
+        if(valley==0){
+            count++;
         }
+        if(it=='D'){
+            valley--;
+        }
+        else{
+            valley++;
+        }
+        
     }
-    return res;
+    return count-1;
 }
 
 int main(){
-    int n=70;
-    vector<int> v = MinimumCoins(n);
-    for(auto it:v){
-        cout<<it<<" ";
-    }
+    int n=8;
+    string str = "DUUUDDDU";
+    cout<<solve(n,str);
     return 0;
 }
