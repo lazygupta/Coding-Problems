@@ -100,5 +100,3 @@ int longestSubarrayWithSumK(vector<int> a, long long k) {
 // if(mpp.find(sum) == mpp.end()){
 //    mpp[sum] = i;
 // }
-
-
