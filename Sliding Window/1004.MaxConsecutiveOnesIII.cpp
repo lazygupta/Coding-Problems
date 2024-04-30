@@ -1,51 +1,29 @@
-
-
-// 1st method
-
-
-class Solution
-{
-public:
-    vector<int> intersection(vector<int> &nums1, vector<int> &nums2)
-    {
-        vector<int> v;
-        int size = max(nums1.size(), nums2.size());
-        for (int i = 0; i < nums1.size(); i++)
-        {
-            if (find(nums2.begin(), nums2.end(), nums1[i]) != nums2.end())
-            {
-              if (find(v.begin(), v.end(), nums1[i]) == v.end())
-              v.push_back(nums1[i]);
-            }
-        }
-        return v;
-    }
-};
-
-
-
-// 2nd method
-
+// Sliding window algorithm
+// If your number of zeroes exceeds k, then move window to the element which satisfies the condiiton of no_of_zeroes==k
 #include<bits/stdc++.h>
 using namespace std;
 
 class Solution {
 public:
     int longestOnes(vector<int>& nums, int k) {
-        int left=0,right=0;
-        int maxi=0;
-        for(right=0;right<nums.size();right++){
-            if(nums[right]==0){
-                k--;
+        int no_of_zeroes = 0;
+        int i=0,j=0;
+        int maxLength=0;
+        while(j<nums.size()){
+            if(nums[j] == 0){
+                no_of_zeroes++;
             }
-            while(k<0){
-                if(nums[left]==0){
-                    k++;
+            while(no_of_zeroes>k){
+                if(nums[i] == 0){
+                    no_of_zeroes--;
                 }
-                left++;
+                i++;
             }
-            maxi = max (maxi , right-left +1);
+            int len = j-i+1;
+            maxLength = max ( maxLength, len);
+            j++;
         }
-        return maxi;
+        return maxLength;
     }
+};
 };

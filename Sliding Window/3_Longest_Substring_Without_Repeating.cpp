@@ -32,13 +32,24 @@ public:
 };
 
 
-int main(){
-    int n=7;
-    //17 15
-    string str="pwwkew";
-    int k=3;
-    Solution ob;
-    int v1=ob.lengthOfLongestSubstring(str);
-    cout<<v1;
-    return 0;
-}
+// Another Solution
+
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        int i=0,j=0;
+        map<char,int> mpp;
+        int maxLength = 0;
+        while(j<s.length()){ 
+            if(mpp.find(s[j]) != mpp.end() && mpp[s[j]] >= i ){ // Check everytime that the current map value is greater than the first pointer
+                i = mpp[s[j]] + 1; 
+            }
+            int len = j-i+1; 
+            maxLength = max(maxLength,len);
+            cout<<maxLength<<" "<<endl;
+            mpp[s[j]] = j; 
+            j++;
+        }
+        return maxLength;
+    }
+};
