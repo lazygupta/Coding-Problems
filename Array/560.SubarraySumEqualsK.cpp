@@ -40,8 +40,6 @@ int findAllSubarraysWithGivenSum(vector < int > & arr, int k) {
 // Then we will store the current prefix sum in the map increasing its occurrence by 1.
 
 
-// 
-
 // T.C = O(N x 1) ---> best CAse ..... O(N x logN) -----> worst case if there is collission 
 
 class Solution {

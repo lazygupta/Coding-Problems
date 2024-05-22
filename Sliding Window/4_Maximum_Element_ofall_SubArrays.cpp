@@ -63,44 +63,44 @@ int main(){
 // In this optimal solution you have to keep track of maximum elements evrytime when arr[i] is removed.
 
 
-// #include<bits/stdc++.h>
-// using namespace std;
+#include<bits/stdc++.h>
+using namespace std;
 
-// vector<int> Maximum_Elements(vector<int> arr,int k){
-//     int i=0,j=0;
-//     int max_ele=0;
-//     int sum=0;
-//     vector<int> v;
-//     list<int> l;
-//     while(j<arr.size()){
-//         // l.push_back(arr[j]);
-//         while(l.size()>0 && l.back()<arr[j]){
-//             l.pop_back();
-//         }
-//         l.push_back(arr[j]);
+vector<int> Maximum_Elements(vector<int> arr,int k){
+    int i=0,j=0;
+    int max_ele=0;
+    int sum=0;
+    vector<int> v;
+    list<int> l;
+    while(j<arr.size()){
+        // l.push_back(arr[j]);
+        while(l.size()>0 && l.back()<arr[j]){
+            l.pop_back();
+        }
+        l.push_back(arr[j]);
 
-//         if(j-i+1<k) j++;
+        if(j-i+1<k) j++;
 
-//         else if(j-i+1==k){ // Reaching the window size
-//             v.push_back(l.front()); //Pushing the maximum element uin that window
+        else if(j-i+1==k){ // Reaching the window size
+            v.push_back(l.front()); //Pushing the maximum element uin that window
 
-//             if(l.front() == arr[i]){
-//                 l.pop_front();
-//             }
-//             i++;
-//             j++;
+            if(l.front() == arr[i]){
+                l.pop_front();
+            }
+            i++;
+            j++;
             
-//         }
-//     }
-//     return v;
-//     }
+        }
+    }
+    return v;
+    }
 
-// int main(){
-//     int n=10;
-//     vector<int> arr={6,8,1,5,0,4,1,0,6,3};
-//     int k=3;
-//     vector<int> v1=Maximum_Elements(arr,k);
-//     for(auto &it:v1)
-//     cout<<it<<" ";
-//     return 0;
-// }
+int main(){
+    int n=10;
+    vector<int> arr={6,8,1,5,0,4,1,0,6,3};
+    int k=3;
+    vector<int> v1=Maximum_Elements(arr,k);
+    for(auto &it:v1)
+    cout<<it<<" ";
+    return 0;
+}
