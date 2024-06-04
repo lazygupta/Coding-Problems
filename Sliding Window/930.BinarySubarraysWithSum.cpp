@@ -1,9 +1,11 @@
+// Exactly K times = at most K times - at most K - 1 times
 // Same as Subarrays whose sum equals k
 // This is more optimal
 // A new approach
 
 // Just minus the Subarraysumslessthan(k) with subarrayssumlessthan(k-1)
 // We will get sunarrays sums equals k
+
 
 #include<bits/stdc++.h>
 using namespace std;
