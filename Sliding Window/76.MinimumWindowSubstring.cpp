@@ -5,7 +5,9 @@
 // Upon reaching count==string t size , start shrinking the window and storing the window size at each point
 // Along with the storing size, store the starting index too i.e., starting index of a window
 
-// T.C = O(N) + O(M) 
+// T.C = O(2N) + O(M)
+
+// S.C = O(256)
 
 
 class Solution {
