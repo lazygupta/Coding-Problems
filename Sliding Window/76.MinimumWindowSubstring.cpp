@@ -1,41 +1,43 @@
-#include<bits/stdc++.h>
-using namespace std;
+// Just keep a hashmap ready or pre inserted with the charcaters in string t
+// traverse over string s
+// If the character in string s in positive in hashmap, It means it is pre inserted and we increase the count,
+// and decerease the freq of character, so that next time we can check it is positive or not
+// Upon reaching count==string t size , start shrinking the window and storing the window size at each point
+// Along with the storing size, store the starting index too i.e., starting index of a window
+
+// T.C = O(N) + O(M) 
+
 
 class Solution {
 public:
     string minWindow(string s, string t) {
-        unordered_map<char, int> mpp;
-        int d=INT_MAX, start=0;
-        for(auto x:t){
-            mpp[x]++;
+        int i = 0, j = 0;
+        map<char, int> mpp;
+        for (auto it : t) {
+            mpp[it]++;
         }
-        int i=0,j=0;
-        int count=mpp.size();
-        while(j<s.length()){
-            if(mpp.find(s[j]) != mpp.end()){
-                mpp[s[j]]--;
-                if(mpp[s[j]]==0){
+        int minLength = INT_MAX;
+        int start = 0;
+        int count = 0;
+        while (j < s.size()) {
+            if (mpp[s[j]] > 0) { 
+                count++;
+            }
+            mpp[s[j]]--;
+            while (count == t.size()) {
+                mpp[s[i]]++;
+                if (mpp[s[i]] > 0) {
                     count--;
-                }
-            }
-            if(count==0){
-                while(count==0){
-                    if(mpp.find(s[i]) != mpp.end()){
-                        mpp[s[i]]++;
-                        if(mpp[s[i]]==1){
-                            count++;
-                            if(j-i+1<d){
-                                d=j-i+1;
-                                start=i;
-                            }
-                        }
+                    if (minLength > j - i + 1) {
+                        start = i;
+                        minLength = j - i + 1;
                     }
-                    i++;
                 }
+                i++;
             }
+
             j++;
-            
         }
-        return d==INT_MAX ? "" : s.substr(start,d);
+        return minLength == INT_MAX ? "" : s.substr(start, minLength);
     }
 };
