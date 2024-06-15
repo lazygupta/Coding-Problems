@@ -9,3 +9,27 @@
 
 // Everytuime increase your currentCapital by profit you made with the project in the priority queue
 // remove everytime from priority qyueue the profit
+
+class Solution {
+public:
+    int findMaximizedCapital(int k, int w, vector<int>& profits, vector<int>& capital) {
+        int i = 0;
+        vector<pair<int,int>> projects;
+        for(int i=0;i<profits.size();i++){
+            projects.push_back({capital[i],profits[i]});
+        }
+        sort(projects.begin(),projects.end());
+        priority_queue<int> maximizedProfit;
+        int currCapital = w;
+        while(k--){
+            while(i<profits.size() && projects[i].first <= currCapital){
+                maximizedProfit.push(projects[i].second);
+                i++;
+            }
+            if(maximizedProfit.empty()) break;
+            currCapital += maximizedProfit.top();
+            maximizedProfit.pop();
+        }
+        return currCapital;
+    }
+};
