@@ -59,7 +59,7 @@ int main(){
 
 // Using Hashing
 
-// However this code with not work for array containing zeroes or negative number
+// However this code with work for array containing zeroes or negative number
 // Because mapping of sums is being replaced by index having zeroes 
 
 // O(N^2)(Worst Case) - better Approach
@@ -95,7 +95,7 @@ int longestSubarrayWithSumK(vector<int> a, long long k) {
 
 // So in above code
 
-// At line 84
+// At line 86
 
 // if(mpp.find(sum) == mpp.end()){
 //    mpp[sum] = i;
