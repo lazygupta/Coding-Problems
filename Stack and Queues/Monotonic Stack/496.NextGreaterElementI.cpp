@@ -42,11 +42,11 @@ public:
         unordered_map<int,int> mpp;
         stack<int> st;
         for(int i=0;i<n;i++){
-            while(!st.empty() && st.top() <= nums2[i]){
-                mpp[st.top()]=nums2[i];
+            while(!st.empty() && nums2[st.top()] <= nums2[i]){
+                mpp[nums2[st.top()]]=nums2[i];
                 st.pop();
             }
-            st.push(nums2[i]);
+            st.push(i);
         }
         for(int i=0;i<nums1.size();i++){
             nums1[i]=mpp.count(nums1[i])?mpp[nums1[i]]:-1;
