@@ -34,7 +34,7 @@
 
 // Now how to calculate it
 
-// the nearest smaller element from element to left is at index 0 that is '0', distance = 4 - 9 = 4
+// the nearest smaller element from element to left is at index 0 that is '0', distance = 4 - 0 = 4
 // the nearest smaller element from element to right is at index 7 that is '1', distance = 7 - 4 = 3
 // Multiplying we get, 4 * 3 = 12
 // And final sum of these suybarrays will be = 2 * 12 = 24
@@ -81,7 +81,7 @@ public:
         ll mod = 1e9 + 7;
         ll sum =0;
         for(int i=0;i<n;i++){
-            ll left = i - pre[i];
+            ll left = i - pre[i]; // distance
             ll right = next[i] - i;
             ll totalWays = left*right;
             ll totalSum = (arr[i] * totalWays)%mod;
