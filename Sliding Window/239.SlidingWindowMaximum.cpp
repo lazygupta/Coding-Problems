@@ -44,62 +44,29 @@ vector<int> Maximum_Elements(int arr[], int n,int k){
     return v;
 }
 
-int main(){
-    int n=10;
-    int arr[n]={6,8,1,5,0,4,1,0,6,3};
-    int k=3;
-    vector<int> v1=Maximum_Elements(arr,n,k);
-    for(auto &it:v1)
-    cout<<it<<" ";
-    return 0;
-}
+// Done using list stl to optimise the time complexity
 
-
-// Now I will try to do my problem in O(n) complexity
-// I will try to use List STL 
-
-// So ,This question troubled me a lot, Done it by using Sliding window only buit with less complexity
-// Aditya Verma video helped me
-// In this optimal solution you have to keep track of maximum elements evrytime when arr[i] is removed.
-
-#include<bits/stdc++.h>
-using namespace std;
-
-vector<int> Maximum_Elements(vector<int> arr,int k){
-    int i=0,j=0;
-    int max_ele=0;
-    int sum=0;
-    vector<int> v;
-    list<int> l;
-    while(j<arr.size()){
-        // l.push_back(arr[j]);
-        while(l.size()>0 && l.back()<arr[j]){
-            l.pop_back();
-        }
-        l.push_back(arr[j]);
-
-        if(j-i+1<k) j++;
-
-        else if(j-i+1==k){ // Reaching the window size
-            v.push_back(l.front()); //Pushing the maximum element uin that window
-
-            if(l.front() == arr[i]){
-                l.pop_front();
+class Solution {
+public:
+    vector<int> maxSlidingWindow(vector<int>& nums, int k) {
+        int l=0,r=0;
+        list<int> li;
+        int n = nums.size();
+        vector<int> v;
+        while(r<n){
+            while(li.size()>0 && li.back()<nums[r]){
+                li.pop_back();
             }
-            i++;
-            j++;
-            
+            li.push_back(nums[r]);
+            if(r-l+1<k) r++;
+            else if(r-l+1 == k){
+                v.push_back(li.front());
+                if(nums[l]==li.front())
+                li.pop_front();
+                l++;
+                r++;
+            }
         }
+        return v;
     }
-    return v;
-    }
-
-int main(){
-    int n=10;
-    vector<int> arr={6,8,1,5,0,4,1,0,6,3};
-    int k=3;
-    vector<int> v1=Maximum_Elements(arr,k);
-    for(auto &it:v1)
-    cout<<it<<" ";
-    return 0;
-}
+};
