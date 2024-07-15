@@ -31,3 +31,28 @@ public:
        return v;
     }
 };
+
+// revision 15 July
+
+class Solution {
+public:
+
+    void generate(int open, int close , int n, vector<string> &res, string str){
+        if(str.length() == n*2){
+            res.push_back(str);
+            return;
+        }
+        if(open < n){
+            generate(open+1,close,n,res,str+'(');
+        }
+        if(close < open){
+            generate(open,close+1,n,res,str+')');
+        }
+    }
+
+    vector<string> generateParenthesis(int n) {
+        vector<string> res;
+        generate(0,0,n,res,"");
+        return res;
+    }
+};
