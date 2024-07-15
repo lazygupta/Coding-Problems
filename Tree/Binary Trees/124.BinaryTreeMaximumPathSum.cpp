@@ -14,7 +14,6 @@ using namespace std;
 
 class Solution {
 public:
-
     int pathSum(TreeNode *node,int &maximumSum){
         if(node == nullptr) return 0;
 
