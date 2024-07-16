@@ -1,3 +1,6 @@
+// LCA is a node among the ancestors of a particular node which is lowest in a level
+
+
 #include<bits/stdc++.h>
 using namespace std;
 
