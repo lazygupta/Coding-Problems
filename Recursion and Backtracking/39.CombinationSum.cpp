@@ -34,3 +34,32 @@ public:
         return result;
     }
 };
+
+// Revision 17 July My solution
+
+class Solution {
+public:
+
+    void helper(vector<int>& candidates,int index,int target,int sum, vector<vector<int>> &bucket,vector<int> &op){
+        if(sum == target){
+            cout<<sum<<" ";
+            cout<<target;
+            cout<<endl;
+            bucket.push_back(op);
+            return;
+        }
+        if(index >= candidates.size() || sum>target) return;
+        sum += candidates[index];
+        op.push_back(candidates[index]);
+        helper(candidates,index,target,sum,bucket,op);
+        op.pop_back();
+        helper(candidates,index+1,target,sum-candidates[index],bucket,op);
+    }
+
+    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+        vector<vector<int>> res;
+        vector<int> op;
+        helper(candidates,0,target,0,res,op);
+        return res;
+    }
+};
