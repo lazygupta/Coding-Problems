@@ -24,3 +24,45 @@ public:
         return solve(nums, n - 1, dp);
     }
 };
+
+// Tabulation Approach
+// As simple as all previous DP Problems
+
+class Solution {
+public:
+// Tabulation Approach
+    int rob(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> dp(n + 1, -1);
+        dp[0] = nums[0];
+        for(int i=1;i<nums.size();i++){
+            int rob = nums[i];
+            if(i>1) rob += dp[i-2];
+            int notrob = dp[i-1];
+            dp[i] = max(rob,notrob);
+        }
+        return dp[n-1];
+    }
+};
+
+// Now lets optimize the spacve using the classic fibonacci prev1 prev2 and curr_i pointer
+
+class Solution {
+public:
+// Tabulation Approach - Space Optimisation
+    int rob(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> dp(n + 1, -1);
+        int prev2 = 0;
+        int prev1 = nums[0];
+        for(int i=1;i<nums.size();i++){
+            int rob = nums[i];
+            if(i>1) rob += prev2;
+            int notrob = prev1;
+            int curr_i = max(rob,notrob);
+            prev2 = prev1;
+            prev1 = curr_i;
+        }
+        return prev1;
+    }
+};
