@@ -8,6 +8,9 @@
 // Step 2:- DO all stuffs on that index
 // Step 3:- Find max
 
+// T.C = O(n*3*n)*m
+// S.C = O(n)(Recursion stack) + O(m)(Dp spaace)
+
 class Solution {
   public:
   
@@ -35,6 +38,9 @@ class Solution {
 };
 
 // Now we will try to memoize it using dp
+// T.C = O(n*3)*m
+// S.C = O(n)(Recursion stack) + O(m)(Dp spaace)
+
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -69,6 +75,9 @@ class Solution {
 };
 
 // Try Tabulation method
+
+// T.C = O(n*3*n)*m
+// S.C = O(m)(Dp spaace)
 
 class Solution {
   public:
