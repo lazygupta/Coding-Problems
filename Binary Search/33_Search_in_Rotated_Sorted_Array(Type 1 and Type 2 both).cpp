@@ -2,7 +2,7 @@
 
 // we have to search an element and return its index.
 // This can be done using Linear Search
-// Brute Force - O(N) - Using Linear Search
+// Brute Force - O(N) - Using Linear Search 
 
 // Optimal approach- O(log N) - using Binary Search\
 // T.C = O(1)
@@ -45,16 +45,11 @@ public:
 
 
 // Nwo the variety 2 comes in where you are given aith an array with not distinct element
-
 // The array is sorted but rotated at any index.
-
 // Search the element in O(log N) time
-
 // Our above code will work but not for a particular edge case
-
 // Suppose arr[]= {1,0,1,1,1}
 // Search for 0;
-
 // Then the comparision cant be done with the mid low and high element
 // i.e., arr[mid]=arr[low]=arr[high] -> Wrong result
 

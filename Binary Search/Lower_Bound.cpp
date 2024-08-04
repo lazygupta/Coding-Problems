@@ -1,5 +1,4 @@
 // Lower bound is the smallest index in an array whose element is greater than equal to target value. 
-
 // Using BS
 
 #include<bits/stdc++.h>

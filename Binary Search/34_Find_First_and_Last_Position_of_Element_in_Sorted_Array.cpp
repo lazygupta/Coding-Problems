@@ -21,9 +21,7 @@ public:
 };
 
 // Now the optimal approach comes into work
-
 // We can solve this using Binary Search
-
 
 class Solution {
 public:
@@ -109,4 +107,48 @@ public:
         return ans;
     }
         
+};
+
+// revision
+
+class Solution {
+public:
+    vector<int> searchRange(vector<int>& num, int target) {
+        int n = num.size();
+        if(n==0) return {-1,-1};
+        int low =0,high = n-1;
+        int first = -1;int last = -1;
+        while(low<=high){
+            int mid = low + (high-low)/2;
+            if(num[mid] == target){
+                first = mid;
+                high = mid-1;
+            }
+            else if(num[mid] <= target){
+                low = mid+1;
+            }
+            else{
+                high = mid-1;
+            }
+        }
+        if(first != -1){
+            int low =0,high = n-1;
+            
+            while(low<=high){
+                int mid = low +(high - low)/2;
+                if(num[mid] == target){
+                    last = mid;
+                    low = mid+1;
+                }
+                else if(num[mid] <= target){
+                    low = mid+1;
+                }
+                else{
+                    high = mid-1;
+                }
+            }
+        }
+        else return {-1,-1};
+        return {first,last};
+    }
 };
