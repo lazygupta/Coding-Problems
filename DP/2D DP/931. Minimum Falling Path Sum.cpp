@@ -1,6 +1,9 @@
-// Using Recursiona dn then memoizing it
+// The recursion solution will give TLE
 
-// TLE
+// Memoizing it using DP
+
+// T.C = O(N*N)
+// S.C = O(N) + O(N*M)
 
 class Solution {
 public:
@@ -30,3 +33,4 @@ public:
         return res;
     }
 };
+
