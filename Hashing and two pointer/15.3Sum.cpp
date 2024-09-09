@@ -5,9 +5,6 @@
 // Iterate over every element to check the all three numbers sum equals to zero or niot
 // If equal to zero add it to set by sorting it, So as to avoid duplicates unordered set to go inside
 
-
-// Better Approach removes the work of third loop
-
 // Use hashing to store the third element everytime
 // Check for the required number is there is the hashmap or not
 // If its there,sort the three number Store the three number in a data structure which doesnt accept duplicates(probably set)
