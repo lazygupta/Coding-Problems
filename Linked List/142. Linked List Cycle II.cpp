@@ -50,6 +50,11 @@ public:
                     fast=fast->next;// fast bhi ab ek hi step se jayega
                 }
                 return fast;
+                // And nwhy this works?
+                // The answer is that fast is moving by 2 times the slow is moving so eventually
+                // If slow moves 1 distance fast moves two distance towards him
+                // A moment will come the fast and slow will be on the same point, So they will collide
+                // And what is the reason behind moving slow and fast one step at the moment it collides
             }
         }
         return NULL;
