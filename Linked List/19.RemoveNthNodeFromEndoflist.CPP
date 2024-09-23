@@ -1,6 +1,9 @@
 // T.C = O(2*N)
 // S.C = O(1)
 
+// First calculate the length
+// And then do basic operatyion to delete a node form a speicifc position
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -14,30 +17,28 @@ struct ListNode {
 class Solution {
 public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
-        if(head == NULL){
-            return head;
-        }
-        int cnt=0;
-        ListNode* temp=head;
-        while(temp!=NULL){
-            cnt++;
+        if(!head) return head;
+        ListNode* temp = head;
+        int count = 0;
+        while(temp){
+            count++;
             temp=temp->next;
         }
-        if(cnt==n){
-            ListNode* newHead= head->next;
+        if(count == n){
+            ListNode* newHead = head->next;
             delete(head);
             return newHead;
         }
-        int res=cnt-n;
-        temp=head;
-        while(temp!=NULL){
-            res--;
-            if(res==0) break;
-            temp=temp->next;
+        int index = count - n;
+        temp = head;
+        while(temp) {
+            index--;
+            if(index == 0) break;
+            temp = temp->next;
         }
-        ListNode* newNode= temp->next;
-        temp->next=temp->next->next;
-        delete(newNode);
+        ListNode* delNode = temp->next;
+        temp->next = temp->next->next;
+        delete(delNode);
         return head;
     }
 };

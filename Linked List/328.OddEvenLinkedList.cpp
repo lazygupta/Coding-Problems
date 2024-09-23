@@ -1,6 +1,10 @@
 // T.C = O(N/2 + N/2 + N)
 // S.C = O(N)
 
+// Just think about how you can extract the element everytime from odd and even
+// Can you think about Tortoise hare alogrithm (maybe its a optimal one to extract)
+// Extract the element in DS, like Queue where we can extract from front
+
 #include<bits/stdc++.h>
 using namespace std;
 
