@@ -1,6 +1,6 @@
 // 1-D DP
 
-// There might be somem questions in which Pick or Not oick will be applicable
+// There might be somem questions in which Pick or Not pick will be applicable
 // After every Memoization approach aka Top- down approach
 
 // Try to think of Tabultion approach aka Bottom-Up approach
