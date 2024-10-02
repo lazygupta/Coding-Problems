@@ -3,6 +3,9 @@
 
 // Understand carefully
 
+// We check mid element is odd index or even index, If it odd index then we check its previous ele is same or not , If it save then its a even odd pair,
+// Thus we are sure that we are in the left half and the ele lies on right half.
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -20,7 +23,7 @@ public:
             if(nums[mid] != nums[mid+1] && nums[mid]!=nums[mid-1]){// We are checking the middle element after every check
                 return nums[mid];
             }
-            if((mid%2==0 && nums[mid]==nums[mid+1]) || (mid%2==1 && nums[mid]==nums[mid-1]))  {
+            if((mid%2==0 && nums[mid]==nums[mid+1]) || (mid%2==1 && nums[mid]==nums[mid-1]))  { 
                 low = mid+1;// We are checking for the left half of an array and then will remove it
 // Because the element must be in the right half then
             }
