@@ -12,7 +12,8 @@ public:
             mpp[x]++;
         }
         int i=0;
-        for (auto it = mpp.begin();it != mpp.end(); ++it)
+        for (auto it = mpp.begin(); 
+        it != mpp.end(); ++it)
         nums[i++]=it->first;
         return mpp.size();
     }
