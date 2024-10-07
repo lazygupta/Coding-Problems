@@ -17,3 +17,9 @@ Sorting complexity nlogn changes to nlogk
 
 kth Smallest Element 
 7 10 4 3 20 15
+
+Max-Heap
+priority_queue<int> 
+
+Min-Heap
+priority_queue<int,vector<int>, greater<int>>
