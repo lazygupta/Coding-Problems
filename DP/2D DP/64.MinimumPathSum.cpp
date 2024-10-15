@@ -11,20 +11,21 @@
 
 class Solution {
 public:
-    int solve(int i,int j,vector<vector<int>> &grid,vector<vector<int>> &dp){
+
+    int func(vector<vector<int>> &grid,int i,int j,vector<vector<int>> &dp){
         if(i<0 || j<0) return INT_MAX;
-        if(i==0 && j==0){
-            return grid[i][j];
-        }
+        if(i==0 && j==0) return grid[i][j];
         if(dp[i][j] != -1) return dp[i][j];
-        return dp[i][j] = grid[i][j] + 
-                            min(solve(i-1,j,grid,dp),solve(i,j-1,grid,dp));
+        int up = func(grid,i-1,j,dp);
+        int left = func(grid,i,j-1,dp);
+        return dp[i][j] = min(up,left) + grid[i][j];
     }
 
     int minPathSum(vector<vector<int>>& grid) {
-        int row = grid.size(),col = grid[0].size();
-        vector<vector<int>> dp(row,vector<int> (col,-1));
-        return solve(row-1,col-1,grid,dp);
+        int m = grid.size();
+        int n = grid[0].size();
+        vector<vector<int>> dp(m,vector<int> (n,-1));
+        return func(grid,m-1,n-1,dp);
     }
 };
 
