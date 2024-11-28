@@ -2,7 +2,6 @@
 // Then according to the frequency
 // Add the ele to minHeap and add the condition
 // so that heap size should not be more than k
-
 typedef pair<int,int> pi;
 
 class Solution {
