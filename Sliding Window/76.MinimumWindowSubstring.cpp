@@ -1,7 +1,7 @@
 // Just keep a hashmap ready or pre inserted with the charcaters in string t
 // traverse over string s
 // If the character in string s in positive in hashmap, It means it is pre inserted and we increase the count,
-// and decerease the freq of character, so that next time we can check it is positive or not
+// and decrease the freq of character, so that next time we can check it is positive or not
 // Upon reaching count==string t size , start shrinking the window and storing the window size at each point
 // Along with the storing size, store the starting index too i.e., starting index of a window
 
