@@ -28,7 +28,17 @@ public:
     }
 };
 
+// Better solution
+// 21 april 2025
 
+// T.C = O(N)
+class Solution {
+    public:
+        int majorityElement(vector<int>& nums) {
+            sort(nums.begin(),nums.end());
+            return nums[nums.size()/2]; // because we know majority is always present so it should be in middle when arrays is sorted
+        }
+    };
 
 // Now the most optimal solution
 

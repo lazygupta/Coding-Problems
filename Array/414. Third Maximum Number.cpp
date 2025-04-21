@@ -69,6 +69,8 @@ class Solution {
 // [1,2,-2147483648]
 // If we will take int_min then the third maximum will never be returned correctly being the correct answer too
 
+// T.C = O(N)
+// S.C = (1)
 
 class Solution {
     public:
