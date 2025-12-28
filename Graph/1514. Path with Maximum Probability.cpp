@@ -1,4 +1,14 @@
 // 1514. Path with Maximum Probability
+// same as Dijkstra's Algorithm
+// We have used Priority Queue to implement Dijkstra's Algorithm to find the path with maximum probability from start_node to end_node.
+// Why not Queue?   
+// In Dijkstra's algorithm, we need to always expand the most probable node first to ensure that we find the path with maximum probability to each node.
+// A regular queue (FIFO) does not guarantee that the next node to be processed is the one with the highest cumulative probability.
+// A priority queue allows us to efficiently retrieve and process the node with the highest cumulative probability at each step, which is essential for the correctness and efficiency of Dijkstra's algorithm.
+// Even Queue will work but it will be less efficient as we may end up processing nodes multiple times leading to higher time complexity.
+// Time Complexity: O((E + V) log V) where E is the number of edges and V is the number of vertices.
+// Space Complexity: O(V + E) for storing the graph and the probability array.
+
 
 #include<bits/stdc++.h>
 using namespace std;
