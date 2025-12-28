@@ -1,5 +1,5 @@
 // Using Priority Queue (Min-Heap) for Dijkstra's Algorithm
-// For Undiorected Graph with unwieghted edges
+// For Undirected Graph with unweighted edges
 
 #include<bits/stdc++.h>
 using namespace std;
